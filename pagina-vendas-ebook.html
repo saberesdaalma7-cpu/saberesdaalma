@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Técnicas de Controle Emocional em Crises</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --olive: #858B72;
+    --olive-dark: #6b7160;
+    --olive-light: #a8ae96;
+    --beige: #CFC6A2;
+    --beige-light: #e8e2cc;
+    --beige-lighter: #f5f1e6;
+    --brown: #3B3622;
+    --brown-light: #5a5238;
+    --gold: #C9A84C;
+    --gold-light: #e2c47a;
+    --gold-lighter: #f0d898;
+    --gold-dark: #a8872e;
+    --white: #fdfaf4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--beige-lighter);
+    color: var(--brown);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* TYPOGRAPHY */
+  h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+
+  .section { padding: 80px 20px; }
+  .container { max-width: 780px; margin: 0 auto; }
+  .container-wide { max-width: 960px; margin: 0 auto; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(160deg, #3B3622 0%, #4d4730 40%, #858B72 100%);
+    padding: 80px 20px 90px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -40px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.2);
+    border: 1px solid rgba(201,168,76,0.5);
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 8px 22px;
+    border-radius: 30px;
+    margin-bottom: 32px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+
+  .hero h1 em {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: rgba(255,255,255,0.82);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  .hero-cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--brown);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 18px 46px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+    transition: all 0.3s ease;
+  }
+
+  .hero-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(201,168,76,0.55);
+  }
+
+  .hero-scroll {
+    margin-top: 48px;
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .hero-scroll span { display: block; margin-top: 10px; font-size: 18px; animation: bounce 2s infinite; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ===== EMOTIONAL OPENER ===== */
+  .emotional-opener {
+    background: var(--white);
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .emotional-opener .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 20px;
+  }
+
+  .emotional-opener h2 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    color: var(--brown);
+    margin-bottom: 36px;
+    line-height: 1.3;
+  }
+
+  .feelings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+    text-align: left;
+  }
+
+  .feeling-card {
+    background: var(--beige-lighter);
+    border-left: 3px solid var(--gold);
+    padding: 20px 22px;
+    border-radius: 4px;
+  }
+
+  .feeling-card .icon { font-size: 22px; margin-bottom: 10px; }
+  .feeling-card p { font-size: 14px; color: var(--brown); line-height: 1.6; font-weight: 500; }
+
+  .opener-quote {
+    background: linear-gradient(135deg, var(--beige) 0%, var(--beige-light) 100%);
+    border-radius: 12px;
+    padding: 36px 40px;
+    margin-top: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    color: var(--brown);
+    line-height: 1.7;
+    position: relative;
+  }
+
+  .opener-quote::before {
+    content: '"';
+    font-size: 80px;
+    color: var(--gold);
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    line-height: 1;
+    opacity: 0.5;
+  }
+
+  /* ===== IDENTIFICATION ===== */
+  .identification {
+    background: var(--beige-lighter);
+    padding: 80px 20px;
+  }
+
+  .identification h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--brown);
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .identify-list {
+    list-style: none;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .identify-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(133,139,114,0.2);
+    font-size: 15px;
+    color: var(--brown);
+  }
+
+  .identify-list li:last-child { border-bottom: none; }
+
+  .check-icon {
+    width: 22px;
+    height: 22px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--brown);
+    font-weight: 800;
+  }
+
+  /* ===== BELIEF BREAK ===== */
+  .belief-break {
+    background: linear-gradient(135deg, var(--olive) 0%, var(--olive-dark) 100%);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+  }
+
+  .belief-break h2 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    margin-bottom: 28px;
+    color: white;
+  }
+
+  .belief-break h2 em { color: var(--gold-light); font-style: italic; }
+
+  .belief-break p {
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 24px;
+    line-height: 1.8;
+  }
+
+  .science-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+
+  /* ===== PRODUCT INTRO ===== */
+  .product-intro {
+    background: var(--white);
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .product-intro .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .product-intro h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--brown);
+    margin-bottom: 20px;
+  }
+
+  .product-intro p {
+    font-size: 16px;
+    color: var(--brown-light);
+    max-width: 620px;
+    margin: 0 auto 48px;
+    line-height: 1.8;
+  }
+
+  .book-mockup {
+    background: linear-gradient(135deg, var(--brown) 0%, #2a2518 100%);
+    border-radius: 16px;
+    padding: 48px 40px;
+    max-width: 400px;
+    margin: 0 auto 48px;
+    position: relative;
+    box-shadow: 20px 20px 60px rgba(59,54,34,0.35);
+  }
+
+  .book-mockup::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 16px;
+    pointer-events: none;
+  }
+
+  .book-mockup .book-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+    line-height: 1.3;
+    font-style: italic;
+  }
+
+  .book-mockup .book-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .book-deco {
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin: 16px auto;
+  }
+
+  .book-tag {
+    display: inline-block;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+  }
+
+  /* ===== PROTOCOL ===== */
+  .protocol {
+    background: var(--beige-lighter);
+    padding: 80px 20px;
+  }
+
+  .protocol .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .protocol h2 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .protocol-name {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--gold-dark);
+    font-style: italic;
+    margin-bottom: 48px;
+  }
+
+  .protocol-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .protocol-step {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 32px 28px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(59,54,34,0.08);
+    position: relative;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .step-number {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--brown);
+    font-weight: 800;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+
+  .protocol-step h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--brown);
+    margin-bottom: 12px;
+  }
+
+  .protocol-step p {
+    font-size: 14px;
+    color: var(--brown-light);
+    line-height: 1.7;
+  }
+
+  /* ===== BENEFITS ===== */
+  .benefits {
+    background: var(--white);
+    padding: 80px 20px;
+  }
+
+  .benefits h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: var(--beige-lighter);
+    border-radius: 10px;
+  }
+
+  .benefit-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .benefit-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 6px;
+  }
+
+  .benefit-item p {
+    font-size: 13px;
+    color: var(--brown-light);
+    line-height: 1.6;
+  }
+
+  /* ===== OBJECTION ===== */
+  .objection {
+    background: linear-gradient(135deg, var(--beige) 0%, var(--beige-light) 100%);
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .objection h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: var(--brown);
+    margin-bottom: 28px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .objection p {
+    font-size: 16px;
+    color: var(--brown-light);
+    max-width: 580px;
+    margin: 0 auto 24px;
+    line-height: 1.8;
+  }
+
+  .objection .highlight-box {
+    background: var(--white);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 24px 28px;
+    text-align: left;
+    max-width: 580px;
+    margin: 32px auto 0;
+    font-size: 15px;
+    color: var(--brown);
+    font-weight: 500;
+    line-height: 1.7;
+  }
+
+  /* ===== PRICING ===== */
+  .pricing {
+    background: var(--beige-lighter);
+    padding: 80px 20px;
+  }
+
+  .pricing h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .pricing-tagline {
+    text-align: center;
+    font-size: 16px;
+    color: var(--olive);
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 48px;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 760px;
+    margin: 0 auto 48px;
+  }
+
+  @media (max-width: 600px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+  .pricing-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+    position: relative;
+    border: 2px solid transparent;
+  }
+
+  .pricing-card.basic {
+    border-color: rgba(133,139,114,0.3);
+    opacity: 0.85;
+  }
+
+  .pricing-card.premium {
+    border-color: var(--gold);
+    background: linear-gradient(180deg, #fffbf0 0%, var(--white) 100%);
+    box-shadow: 0 12px 48px rgba(201,168,76,0.22);
+    transform: scale(1.03);
+  }
+
+  .best-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--brown);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(201,168,76,0.4);
+  }
+
+  .card-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 16px;
+  }
+
+  .card-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--brown);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .pricing-card.premium .card-price { color: var(--gold-dark); }
+
+  .card-price span { font-size: 1rem; font-family: 'Montserrat', sans-serif; }
+
+  .card-desc {
+    font-size: 13px;
+    color: var(--brown-light);
+    margin: 12px 0 24px;
+    line-height: 1.6;
+  }
+
+  .card-includes {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 28px;
+  }
+
+  .card-includes li {
+    font-size: 13px;
+    color: var(--brown);
+    padding: 7px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 1px solid rgba(133,139,114,0.12);
+  }
+
+  .card-includes li:last-child { border-bottom: none; }
+
+  .card-includes .ci { color: var(--gold); font-weight: 700; flex-shrink: 0; }
+  .card-includes .cx { color: #bbb; font-weight: 700; flex-shrink: 0; }
+
+  .card-limit {
+    font-size: 12px;
+    color: #aaa;
+    font-style: italic;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .btn-primary {
+    display: block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--brown);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(201,168,76,0.35);
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(201,168,76,0.5);
+  }
+
+  .btn-secondary {
+    display: block;
+    background: transparent;
+    color: var(--olive);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1.5px solid var(--olive-light);
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .btn-secondary:hover { background: var(--beige-light); }
+
+  .pricing-decision {
+    text-align: center;
+    margin-top: 32px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--brown);
+    font-style: italic;
+  }
+
+  /* ===== BONUSES ===== */
+  .bonuses {
+    background: var(--brown);
+    padding: 80px 20px;
+    color: white;
+  }
+
+  .bonuses .eyebrow {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+  }
+
+  .bonuses h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: white;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .bonus-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .bonus-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 12px;
+    padding: 28px 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .bonus-card:hover {
+    background: rgba(201,168,76,0.08);
+    border-color: rgba(201,168,76,0.6);
+    transform: translateY(-4px);
+  }
+
+  .bonus-num {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--brown);
+    font-weight: 800;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+
+  .bonus-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .bonus-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .bonus-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+  }
+
+  /* ===== TRANSFORMATION ===== */
+  .transformation {
+    background: var(--white);
+    padding: 80px 20px;
+  }
+
+  .transformation h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 720px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(59,54,34,0.12);
+  }
+
+  @media (max-width: 560px) { .before-after { grid-template-columns: 1fr; } }
+
+  .before-col {
+    background: #f0ece4;
+    padding: 36px 28px;
+  }
+
+  .after-col {
+    background: linear-gradient(160deg, var(--olive) 0%, var(--olive-dark) 100%);
+    padding: 36px 28px;
+    color: white;
+  }
+
+  .ba-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .before-col .ba-label { color: #aaa; }
+  .after-col .ba-label { color: var(--gold-light); }
+
+  .ba-list { list-style: none; }
+
+  .ba-list li {
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(133,139,114,0.15);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .before-col .ba-list li { color: #777; }
+  .after-col .ba-list li { color: rgba(255,255,255,0.88); border-color: rgba(255,255,255,0.12); }
+
+  .ba-list li:last-child { border-bottom: none; }
+
+  /* ===== PROOF ===== */
+  .proof {
+    background: linear-gradient(135deg, var(--beige) 0%, var(--beige-light) 100%);
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .proof h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: var(--brown);
+    margin-bottom: 32px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .proof-box {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 36px 40px;
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: 0 4px 24px rgba(59,54,34,0.08);
+    border-top: 4px solid var(--gold);
+  }
+
+  .proof-box p {
+    font-size: 15px;
+    color: var(--brown);
+    line-height: 1.85;
+    margin-bottom: 16px;
+  }
+
+  .proof-box p:last-child { margin-bottom: 0; color: var(--brown-light); font-style: italic; font-size: 14px; }
+
+  /* ===== GUARANTEE ===== */
+  .guarantee {
+    background: var(--white);
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .guarantee-box {
+    background: var(--beige-lighter);
+    border-radius: 16px;
+    padding: 48px 40px;
+    max-width: 580px;
+    margin: 0 auto;
+    border: 2px solid var(--gold);
+    position: relative;
+  }
+
+  .guarantee-icon {
+    font-size: 52px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .guarantee-box h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: var(--brown);
+    margin-bottom: 20px;
+  }
+
+  .guarantee-box p {
+    font-size: 15px;
+    color: var(--brown-light);
+    line-height: 1.8;
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta {
+    background: linear-gradient(160deg, var(--brown) 0%, #2a2518 100%);
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+
+  .final-cta h2 em { color: var(--gold-light); font-style: italic; }
+
+  .final-cta p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto 48px;
+    line-height: 1.8;
+  }
+
+  .final-cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--brown);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 20px 52px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 10px 40px rgba(201,168,76,0.4);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+  }
+
+  .final-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 50px rgba(201,168,76,0.55);
+  }
+
+  .final-cta-sub {
+    display: block;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1.5px;
+    margin-top: 16px;
+  }
+
+  .final-security {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  .security-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 500;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #1e1c13;
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.8;
+  }
+
+  /* ===== DIVIDER ===== */
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 8px;
+    margin: 12px 0;
+    opacity: 0.6;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-section {
+    background: var(--beige-lighter);
+    padding: 80px 20px;
+  }
+
+  .faq-eyebrow {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 16px;
+  }
+
+  .faq-title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .faq-sub {
+    text-align: center;
+    font-size: 15px;
+    color: var(--olive);
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 48px;
+  }
+
+  .faq-list {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid rgba(201,168,76,0.2);
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+
+  .faq-item:hover { border-color: rgba(201,168,76,0.5); }
+
+  .faq-q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--brown);
+    line-height: 1.5;
+    transition: background 0.2s ease;
+  }
+
+  .faq-q:hover { background: var(--beige-lighter); }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--brown);
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    line-height: 1;
+  }
+
+  .faq-q.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+
+  .faq-a.open {
+    max-height: 300px;
+    padding: 0 24px 20px;
+  }
+
+  .faq-a p {
+    font-size: 14px;
+    color: var(--brown-light);
+    line-height: 1.8;
+    border-top: 1px solid rgba(133,139,114,0.15);
+    padding-top: 16px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero > * { animation: fadeInUp 0.8s ease both; }
+  .hero .hero-badge { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.25s; }
+  .hero .hero-sub { animation-delay: 0.4s; }
+  .hero .hero-cta-btn { animation-delay: 0.55s; }
+  .hero .hero-scroll { animation-delay: 0.7s; }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">✦ Baseado no funcionamento real do seu sistema nervoso ✦</div>
+    <h1>
+      O que fazer na hora da crise emocional —<br>
+      <em>quando sua mente simplesmente trava.</em>
+    </h1>
+    <p class="hero-sub">
+      O método simples que ajuda seu sistema nervoso a sair do modo pânico,<br>
+      mesmo quando você não consegue nem respirar direito.
+    </p>
+    <p style="color: rgba(255,255,255,0.85); margin-top:-20px; margin-bottom:36px; font-size:15px; max-width:560px; margin-left:auto; margin-right:auto; line-height:1.7;">
+      E o pior: quanto mais você tenta se controlar… mais parece que perde o controle.
+    </p>
+    <a href="#oferta" class="hero-cta-btn">QUERO ME ACALMAR AGORA</a>
+    <div class="hero-scroll">
+      continue lendo <span>↓</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EMOTIONAL OPENER ===== -->
+<section class="emotional-opener">
+  <div class="container">
+    <div class="eyebrow">✦ Você conhece essa sensação ✦</div>
+    <h2>Já sentiu isso sem conseguir parar?</h2>
+
+    <div class="feelings-grid">
+      <div class="feeling-card">
+        <div class="icon">🫀</div>
+        <p>Aquele aperto no peito que aparece do nada e não vai embora.</p>
+      </div>
+      <div class="feeling-card">
+        <div class="icon">🌬️</div>
+        <p>A respiração travando como se o ar fosse acabar.</p>
+      </div>
+      <div class="feeling-card">
+        <div class="icon">🌀</div>
+        <p>Pensamentos acelerados, um em cima do outro, sem pausa.</p>
+      </div>
+      <div class="feeling-card">
+        <div class="icon">😶</div>
+        <p>A sensação de estar perdendo o controle — e não saber o que fazer.</p>
+      </div>
+    </div>
+
+    <div class="opener-quote">
+      Você tenta respirar. Tenta se distrair. Tenta ignorar.<br>
+      Mas a crise permanece. E você fica com a sensação de que<br>
+      <strong>alguma coisa está errada com você.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IDENTIFICATION ===== -->
+<section class="identification">
+  <div class="container">
+    <h2>Se você se identificou com algum desses…</h2>
+    <ul class="identify-list">
+      <li>
+        <div class="check-icon">✓</div>
+        <span>Você tem crises emocionais que chegam sem avisar e te deixam paralisada.</span>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <span>Você se cobra demais — e essa autocobrança drena sua energia todos os dias.</span>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <span>Você teme perder o controle em discussões e acaba explodindo (ou se fechando).</span>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <span>Você carrega responsabilidades demais e sente que vai desmoronar a qualquer momento.</span>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <span>Você tenta técnicas, mas nada parece funcionar de verdade na hora da crise.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== BELIEF BREAK ===== -->
+<section class="belief-break">
+  <div class="container">
+    <h2>Isso <em>não é fraqueza.</em><br>É o seu sistema nervoso pedindo ajuda.</h2>
+    <p>
+      Você não está exagerando. Você não é dramática. Você não é instável.
+    </p>
+    <p>
+      Você não falhou. Você só nunca aprendeu o que fazer no momento em que o seu cérebro entra em modo de sobrevivência.
+    </p>
+    <p>
+      O que acontece com você tem um nome e uma explicação científica. Quando a crise chega, seu cérebro entra em modo de sobrevivência. E nesse estado, nenhuma técnica superficial funciona — porque a parte racional da sua mente está temporariamente desativada.
+    </p>
+    <p>
+      O problema nunca foi você. Foi a falta do método certo.
+    </p>
+    <div class="science-tag">🧠 Base: Neurociência do Sistema Nervoso Autônomo</div>
+  </div>
+</section>
+
+<!-- ===== PRODUCT INTRO ===== -->
+<section class="product-intro">
+  <div class="container">
+    <div class="eyebrow">✦ A solução ✦</div>
+    <h2>Apresentando o ebook que vai mudar<br>como você reage às suas crises</h2>
+    <p>Um guia prático, direto e baseado em ciência — criado especialmente para mulheres que vivem sobrecarregadas e precisam de resultados reais, não de mais teoria.</p>
+
+    <div class="book-mockup">
+      <div class="book-sub">Ebook</div>
+      <div class="book-title">Técnicas de Controle Emocional em Crises</div>
+      <div class="book-deco"></div>
+      <div class="book-tag">Método Passo a Passo</div>
+    </div>
+
+    <p style="font-size:15px; max-width:580px; margin: 0 auto; color: var(--brown);">
+      Não é mais um livro de autoajuda com conselhos vagos.<br>
+      É um <strong>protocolo funcional</strong> que você aplica no exato momento em que a crise começa.
+    </p>
+  </div>
+</section>
+
+<!-- ===== PROTOCOL ===== -->
+<section class="protocol">
+  <div class="container-wide">
+    <div class="eyebrow">✦ O método exclusivo ✦</div>
+    <h2>O Protocolo de Regulação em 3 Etapas</h2>
+    <div class="protocol-name">"A estrutura que o seu cérebro precisa quando você não consegue pensar."</div>
+
+    <div class="protocol-steps">
+      <div class="protocol-step">
+        <div class="step-number">1</div>
+        <h3>Reduzir a Emoção</h3>
+        <p>Técnicas específicas para desativar o alarme do seu sistema nervoso e baixar a intensidade da crise nos primeiros minutos — sem precisar "pensar certo".</p>
+      </div>
+      <div class="protocol-step">
+        <div class="step-number">2</div>
+        <h3>Organizar a Mente</h3>
+        <p>Com a emoção reduzida, você aprende a ordenar os pensamentos acelerados e separar o que é real do que é catastrofização.</p>
+      </div>
+      <div class="protocol-step">
+        <div class="step-number">3</div>
+        <h3>Recuperar o Controle</h3>
+        <p>Você retoma o comando do seu estado emocional e volta a agir com clareza — não com impulsividade ou paralisia.</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:48px;">
+    <a href="#oferta" style="display:inline-block; background:linear-gradient(135deg,#C9A84C,#e2c47a); color:#3B3622; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:16px 40px; border-radius:50px; text-decoration:none; box-shadow:0 6px 24px rgba(201,168,76,0.35);">QUERO APLICAR ESSE MÉTODO →</a>
+    <p style="margin-top:12px; font-size:12px; color:var(--olive); letter-spacing:1px;">Centenas de pessoas já começaram a usar essas técnicas</p>
+  </div>
+</section>
+<section class="benefits">
+  <div class="container-wide">
+    <h2>O que você vai conseguir fazer</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">⚡</div>
+        <div>
+          <h4>Agir na crise — não paralisar</h4>
+          <p>Ter um caminho claro para seguir mesmo quando sua mente travar.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🌿</div>
+        <div>
+          <h4>Respirar sem forçar</h4>
+          <p>Técnicas que funcionam de verdade com o seu sistema nervoso — não contra ele.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🗣️</div>
+        <div>
+          <h4>Discutir sem explodir</h4>
+          <p>Manter a calma em conversas difíceis sem guardar tudo para dentro.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🛡️</div>
+        <div>
+          <h4>Parar de se cobrar tanto</h4>
+          <p>Entender a raiz da autocobrança e interromper o ciclo de ansiedade que ela cria.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🌙</div>
+        <div>
+          <h4>Dormir sem a mente acelerada</h4>
+          <p>Aplicar a rotina de equilíbrio que desacelera o dia antes de dormir.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💛</div>
+        <div>
+          <h4>Sentir que é normal de novo</h4>
+          <p>Voltar ao centro de si mesma — sem precisar de horas de meditação.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="#oferta" style="display:inline-block; background:linear-gradient(135deg,#C9A84C,#e2c47a); color:#3B3622; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:16px 40px; border-radius:50px; text-decoration:none; box-shadow:0 6px 24px rgba(201,168,76,0.35);">QUERO ESSES RESULTADOS →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OBJECTION ===== -->
+<section class="objection">
+  <div class="container">
+    <h2>"Mas eu já tentei respirar fundo,<br>me distrair e ignorar…"</h2>
+    <p>
+      E não funcionou. Porque essas técnicas agem na superfície do sintoma — <strong>não na causa da crise.</strong>
+    </p>
+    <p>
+      O Protocolo de Regulação em 3 Etapas foi estruturado para funcionar <strong>quando o cérebro racional está offline</strong> — exatamente na hora em que você mais precisa. Ele não trata só a crise: <strong>ele atua no que causa a crise.</strong>
+    </p>
+    <div class="highlight-box">
+      💡 A diferença não é força de vontade. É saber <em>em qual ordem</em> agir para que o seu sistema nervoso possa se regular. Isso você vai aprender aqui.
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="oferta">
+  <div class="container-wide">
+    <h2>Escolha o seu nível de transformação</h2>
+    <p class="pricing-tagline">"Você pode continuar tentando controlar a crise… ou aprender a impedir que ela te domine."</p>
+    <p style="text-align:center; font-size:15px; color:var(--brown-light); margin-bottom:40px; font-weight:500;">
+      Não é só sobre a crise — é sobre a <strong>causa da crise.</strong> Escolha o plano que vai até a raiz.
+    </p>
+
+    <div class="pricing-grid">
+
+      <!-- BASIC -->
+      <div class="pricing-card basic">
+        <div class="card-label">Opção 1 · Básico</div>
+        <div class="card-price"><span>R$</span>27</div>
+        <div class="card-desc">Apenas o ebook.<br>Para quem quer começar.</div>
+        <ul class="card-includes">
+          <li><span class="ci">✓</span> Ebook Técnicas de Controle Emocional</li>
+          <li><span class="cx">✗</span> Bônus 1 — Autocobrança</li>
+          <li><span class="cx">✗</span> Bônus 2 — Rotina de 15 min</li>
+          <li><span class="cx">✗</span> Bônus 3 — Controle em discussões</li>
+        </ul>
+        <p class="card-limit">⚠ Você continua lidando com crises sozinha<br>⚠ Sem atuar na causa da ansiedade<br>⚠ E repetindo o mesmo ciclo emocional</p>
+        <a href="https://chk.eduzz.com/89AXJ4KE0D" target="_blank" rel="noopener" class="btn-secondary">Quero só o básico</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="pricing-card premium">
+        <div class="best-badge">★ MAIS ESCOLHIDO</div>
+        <div class="card-label" style="color: var(--gold-dark);">Opção 2 · Completo</div>
+        <div class="card-price"><span>R$</span>47</div>
+        <p style="color: var(--gold-dark); font-weight:700; margin-bottom:10px; font-size:14px;">🔥 Escolha de quem quer parar de viver em crise</p>
+        <div class="card-desc" style="color: var(--brown); font-weight:600;">Ebook + 3 bônus.<br>Para quem quer mudar de vez.</div>
+        <ul class="card-includes">
+          <li><span class="ci">✓</span> Ebook Técnicas de Controle Emocional</li>
+          <li><span class="ci">✓</span> Bônus 1 — Fim da Autocobrança</li>
+          <li><span class="ci">✓</span> Bônus 2 — Rotina de Equilíbrio de 15 min</li>
+          <li><span class="ci">✓</span> Bônus 3 — Como não explodir em discussões</li>
+        </ul>
+        <p class="card-limit" style="color: var(--olive); font-style:normal; font-weight:600;">✦ Atua na causa da ansiedade — não só no sintoma<br>✦ Reduz crises no dia a dia<br>✦ Evita que novas crises apareçam</p>
+        <a href="https://chk.eduzz.com/G92KZ6EKWE" target="_blank" rel="noopener" class="btn-primary">QUERO SAIR DA CRISE AGORA →</a>
+      </div>
+
+    </div>
+
+    <p class="pricing-decision">
+      Por menos do que o valor de um lanche, você deixa de só aliviar a crise —<br>e começa a parar o que causa ela.
+    </p>
+  </div>
+</section>
+
+<!-- ===== BONUSES ===== -->
+<section class="bonuses">
+  <div class="container-wide">
+    <div class="eyebrow">✦ Exclusivo na opção de R$47 ✦</div>
+    <h2>Os 3 bônus que completam a transformação</h2>
+    <div class="bonus-cards">
+      <div class="bonus-card">
+        <div class="bonus-num">1</div>
+        <div class="bonus-label">Bônus</div>
+        <h3>Como Parar a Autocobrança que Gera Ansiedade</h3>
+        <p>Entenda por que você se cobra tanto — e aprenda o método para interromper esse ciclo silencioso que alimenta sua ansiedade todos os dias.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-num">2</div>
+        <div class="bonus-label">Bônus</div>
+        <h3>Rotina de 15 Minutos para Equilíbrio Emocional</h3>
+        <p>Uma sequência simples e eficaz para regular seu sistema nervoso antes que o dia te sobrecarregue. 15 minutos que mudam tudo.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-num">3</div>
+        <div class="bonus-label">Bônus</div>
+        <h3>Como Não Explodir em Discussões</h3>
+        <p>Técnicas práticas para manter o controle emocional em momentos de conflito — sem engolir tudo, sem perder a cabeça.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRANSFORMATION ===== -->
+<section class="transformation">
+  <div class="container">
+    <h2>Antes × Depois do Protocolo</h2>
+    <div class="before-after">
+      <div class="before-col">
+        <span class="ba-label">Antes</span>
+        <ul class="ba-list">
+          <li><span>✗</span> Paralisa durante a crise</li>
+          <li><span>✗</span> Não sabe o que fazer</li>
+          <li><span>✗</span> Cai no mesmo padrão de sempre</li>
+          <li><span>✗</span> Se cobra por ter reagido mal</li>
+          <li><span>✗</span> Sente que está sozinha nisso</li>
+          <li><span>✗</span> Vive no modo sobrevivência</li>
+        </ul>
+      </div>
+      <div class="after-col">
+        <span class="ba-label">Depois</span>
+        <ul class="ba-list">
+          <li><span>✓</span> Tem um caminho claro a seguir</li>
+          <li><span>✓</span> Age com calma na crise</li>
+          <li><span>✓</span> Quebra o ciclo automático</li>
+          <li><span>✓</span> Reage com presença e controle</li>
+          <li><span>✓</span> Entende o que acontece consigo</li>
+          <li><span>✓</span> Vive com mais leveza e clareza</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROOF ===== -->
+<section class="proof">
+  <div class="container">
+    <h2>Por que isso funciona?<br>A ciência explica.</h2>
+    <div class="proof-box">
+      <p>
+        Durante uma crise emocional, o seu cérebro ativa o sistema nervoso simpático — o modo "luta ou fuga". Nesse estado, o córtex pré-frontal (responsável pelo raciocínio lógico) fica temporariamente suprimido.
+      </p>
+      <p>
+        É por isso que respirar ou "pensar positivo" não funciona na hora da crise. Você precisa de técnicas que atuem diretamente no sistema nervoso autônomo — sinalizando ao corpo que o perigo passou.
+      </p>
+      <p>
+        <strong>Mas só parar a crise não é suficiente.</strong> O Protocolo de Regulação em 3 Etapas vai além: ele identifica e atua na causa da crise — para que ela apareça cada vez menos na sua vida.
+      </p>
+      <p>— Isso não é espiritualidade. É neurociência aplicada ao dia a dia.</p>
+      <p style="font-weight:600; color:var(--brown); border-top:1px solid rgba(133,139,114,0.2); padding-top:16px; margin-top:4px;">
+        Na prática: você vai sentir seu corpo desacelerar antes mesmo de terminar as técnicas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUARANTEE ===== -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-box">
+      <span class="guarantee-icon">🛡️</span>
+      <h2>Garantia Total de 7 Dias</h2>
+      <p>
+        Se você aplicar o método e não sentir nenhuma diferença, basta me enviar uma mensagem em até <strong>7 dias</strong> após a compra e devolverei 100% do seu dinheiro. Sem perguntas. Sem burocracia.
+      </p>
+      <br>
+      <p style="font-size:14px; color: var(--olive); font-weight:600;">
+        O risco é zero. A decisão de continuar sofrendo sozinha não precisa ser.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-eyebrow">✦ Antes de decidir ✦</div>
+    <h2 class="faq-title">Dúvidas Frequentes</h2>
+    <p class="faq-sub">Tudo que você precisa saber antes de começar.</p>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Esse ebook substitui terapia?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Não. Este material é uma ferramenta prática de apoio emocional, mas não substitui acompanhamento psicológico ou médico. Se suas crises forem frequentes, intensas ou envolverem risco à sua segurança, procure ajuda profissional.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Vou receber o acesso na hora?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sim. Após a confirmação do pagamento, você recebe o acesso ao material digital imediatamente.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>As técnicas funcionam mesmo se eu estiver muito ansiosa?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sim. O ebook foi criado justamente para momentos em que a mente trava e fica difícil pensar com clareza. As técnicas são simples, diretas e organizadas por nível de crise.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Qual opção vale mais a pena?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>A opção completa de R$47 é a mais recomendada, porque além do ebook principal, você recebe 3 bônus que ajudam a trabalhar autocobrança, equilíbrio emocional diário e controle em discussões.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Posso comprar só o ebook principal?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sim. A opção de R$27 inclui apenas o ebook principal com técnicas para lidar com crises emocionais.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Tem garantia?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sim. Você tem 7 dias de garantia para testar o material com tranquilidade. Se não sentir diferença, devolvemos 100% do valor — sem perguntas.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Como vou receber os bônus?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Os bônus são digitais e entregues junto com o acesso ao produto completo de R$47.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Esse conteúdo é indicado para quem tem ansiedade?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sim, especialmente para quem sente ansiedade, sobrecarga emocional, pensamentos acelerados, choro intenso ou dificuldade de se acalmar. Ainda assim, ele não substitui tratamento profissional.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Por onde eu devo começar?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Se você quer apenas aprender o básico para lidar com crises, o ebook principal já ajuda. Mas se você quer reduzir a ansiedade no dia a dia e parar o que causa essas crises, a opção completa de R$47 é a mais indicada.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:40px; font-weight:600; color:var(--brown); font-size:16px;">
+      Se você chegou até aqui, já sabe que precisa de algo diferente.
+    </p>
+
+    <div style="text-align:center; margin-top:20px;">
+      <a href="#oferta" class="hero-cta-btn" style="display:inline-block;">QUERO RESOLVER ISSO AGORA</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Você merece se sentir<br><em>em paz consigo mesma.</em></h2>
+    <p>
+      Não na próxima crise. Não quando tudo estiver perfeito.<br>
+      Agora. Com o que você tem. Com quem você é.
+    </p>
+    <p style="margin-bottom:20px; color:rgba(255,255,255,0.85); font-size:15px; max-width:480px; margin-left:auto; margin-right:auto; line-height:1.75;">
+      Ou você continua tentando lidar com isso do mesmo jeito…<br>
+      ou começa hoje com um método que realmente funciona.
+    </p>
+
+    <a href="https://chk.eduzz.com/G92KZ6EKWE" target="_blank" rel="noopener" class="final-cta-btn">QUERO SAIR DA CRISE AGORA</a>
+    <span class="final-cta-sub">✦ Ebook + 3 bônus por apenas R$47 · Acesso imediato ✦</span>
+    <p style="margin-top:20px; color: rgba(255,255,255,0.7); font-size:14px;">
+      ⚠ Essa condição pode sair do ar a qualquer momento.
+    </p>
+
+    <div class="final-security">
+      <div class="security-item">🔒 Pagamento 100% seguro</div>
+      <div class="security-item">📱 Acesso imediato</div>
+      <div class="security-item">🛡️ Garantia de 7 dias</div>
+      <div class="security-item">💳 Parcele no cartão</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2024 · Técnicas de Controle Emocional em Crises · Todos os direitos reservados.</p>
+  <p style="margin-top:8px">Este produto é vendido com garantia de satisfação de 7 dias. Ao realizar a compra, você concorda com os Termos de Uso e Política de Privacidade.</p>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const answer = item.querySelector('.faq-a');
+  const isOpen = btn.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-q.open').forEach(b => {
+    b.classList.remove('open');
+    b.parentElement.querySelector('.faq-a').classList.remove('open');
+  });
+  // Open clicked if it was closed
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+</script>
+</body>
+</html>
