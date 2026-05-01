@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Controle Emocional em Crises — Sistema Prático</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+:root {
+  /* BASE */
+  --white:    #FFFFFF;
+  --beige:    #F5F2EF;
+  --text:     #2D2D2D;
+  --text-lt:  #5a5a5a;
+  /* PRINCIPAL */
+  --purple:   #6C5CE7;
+  --purple-dk:#5648c4;
+  --purple-lt:#8a7aec;
+  /* APOIO */
+  --pink:     #F8C8DC;
+  --pink-lt:  #fde8f1;
+  /* AÇÃO */
+  --orange:   #FF7A00;
+  --orange-dk:#e06900;
+  --orange-lt:#ff9533;
+  /* NEUTROS */
+  --gray:     #f0eeed;
+}
+
+body { background:var(--beige); color:var(--text); font-family:'DM Sans',sans-serif; font-size:16px; line-height:1.7; overflow-x:hidden; }
+.container    { max-width:760px;  margin:0 auto; padding:0 20px; }
+.container-md { max-width:940px;  margin:0 auto; padding:0 20px; }
+.sec          { padding:80px 20px; }
+.eyebrow      { font-size:10px; font-weight:800; letter-spacing:3.5px; text-transform:uppercase; color:var(--purple); margin-bottom:16px; display:block; }
+
+/* ── TOPBAR ── */
+.topbar {
+  background:var(--purple);
+  text-align:center; padding:11px 20px;
+  font-size:12px; font-weight:700; letter-spacing:2px;
+  color:#fff; text-transform:uppercase;
+}
+
+/* ══════════════════════════════════
+   BUTTONS
+══════════════════════════════════ */
+.btn-orange {
+  display:inline-block;
+  background:var(--orange);
+  color:#fff;
+  font-family:'DM Sans',sans-serif;
+  font-size:15px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
+  padding:19px 52px; border-radius:60px; text-decoration:none;
+  box-shadow:0 8px 32px rgba(255,122,0,.45);
+  transition:all .3s ease;
+  border:none; cursor:pointer;
+}
+.btn-orange:hover { background:var(--orange-dk); transform:translateY(-3px); box-shadow:0 18px 48px rgba(255,122,0,.55); }
+
+.btn-orange-blk {
+  display:block; width:100%;
+  background:var(--orange);
+  color:#fff;
+  font-family:'DM Sans',sans-serif;
+  font-size:14px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
+  padding:18px 24px; border-radius:50px; text-decoration:none;
+  box-shadow:0 6px 28px rgba(255,122,0,.4);
+  transition:all .3s ease;
+}
+.btn-orange-blk:hover { background:var(--orange-dk); transform:translateY(-2px); box-shadow:0 14px 40px rgba(255,122,0,.55); }
+
+.btn-ghost {
+  display:block; width:100%; padding:14px;
+  border-radius:50px; background:transparent;
+  border:1.5px solid rgba(255,255,255,.3);
+  color:rgba(255,255,255,.65);
+  font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase;
+  text-decoration:none; transition:all .3s ease;
+}
+.btn-ghost:hover { border-color:rgba(255,255,255,.6); color:#fff; }
+
+.btn-ghost-dark {
+  display:block; width:100%; padding:14px;
+  border-radius:50px; background:transparent;
+  border:1.5px solid rgba(108,92,231,.35);
+  color:var(--purple);
+  font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase;
+  text-decoration:none; transition:all .3s ease;
+}
+.btn-ghost-dark:hover { border-color:var(--purple); background:rgba(108,92,231,.05); }
+
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+.hero {
+  background:linear-gradient(160deg,#1a1540 0%,#2d2568 50%,#6C5CE7 100%);
+  padding:72px 20px 88px; text-align:center;
+  position:relative; overflow:hidden;
+}
+.hero::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255,122,0,.15) 0%, transparent 65%);
+  pointer-events:none;
+}
+.hero::after {
+  content:''; position:absolute;
+  bottom:-60px; left:50%; transform:translateX(-50%);
+  width:700px; height:200px;
+  background:radial-gradient(ellipse, rgba(248,200,220,.08) 0%, transparent 70%);
+  pointer-events:none;
+}
+
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.25);
+  color:rgba(255,255,255,.9);
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  padding:7px 20px; border-radius:40px; margin-bottom:32px;
+}
+
+.hero h1 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,5.5vw,3.8rem);
+  font-weight:700; color:#fff; line-height:1.12; margin-bottom:24px;
+}
+.hero h1 em { color:#ffb347; font-style:italic; }
+.hero h1 strong {
+  display:block; font-size:78%; font-weight:400;
+  font-family:'DM Sans',sans-serif;
+  color:rgba(255,255,255,.75); margin-top:12px;
+}
+
+.hero-hook {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.05rem,2.4vw,1.3rem);
+  font-style:italic; color:rgba(255,255,255,.88);
+  max-width:580px; margin:0 auto 24px; line-height:1.75;
+}
+
+.hero-sub {
+  font-size:clamp(.9rem,2vw,1.05rem);
+  color:rgba(255,255,255,.72); max-width:560px; margin:0 auto 16px; line-height:1.85;
+}
+
+.hero-tension {
+  font-size:14px; font-weight:600; color:rgba(255,255,255,.92);
+  max-width:500px; margin:0 auto 40px;
+  background:rgba(255,122,0,.18);
+  border-left:3px solid var(--orange);
+  padding:14px 20px; border-radius:0 8px 8px 0; text-align:left;
+}
+
+.hero-anchor { display:block; margin-top:14px; font-size:12px; color:rgba(255,255,255,.3); letter-spacing:1.5px; }
+.scroll-hint { margin-top:44px; color:rgba(255,255,255,.3); font-size:11px; letter-spacing:2px; text-transform:uppercase; }
+.scroll-hint span { display:block; font-size:20px; margin-top:8px; animation:bob 2s ease-in-out infinite; }
+@keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
+
+/* ── PROOF STRIP ── */
+.proof-strip {
+  background:var(--pink); padding:13px 20px;
+  text-align:center; font-size:13px; color:var(--text); font-weight:600;
+}
+.proof-strip strong { color:var(--purple-dk); }
+
+/* ══════════════════════════════════
+   PAIN
+══════════════════════════════════ */
+.pain { background:var(--white); text-align:center; }
+.pain h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.75rem,4vw,2.6rem); color:var(--text); margin-bottom:36px; line-height:1.2;
+}
+.pain h2 em { color:var(--purple); font-style:italic; }
+
+.symptoms {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px; margin:40px 0;
+}
+.symptom {
+  background:var(--beige);
+  border-radius:12px; padding:24px 20px; text-align:left;
+  border-bottom:3px solid var(--purple);
+  transition:transform .25s ease;
+}
+.symptom:hover { transform:translateY(-4px); }
+.symptom-icon { font-size:26px; margin-bottom:12px; display:block; }
+.symptom h4 { font-size:14px; font-weight:700; color:var(--text); margin-bottom:6px; }
+.symptom p { font-size:13px; color:var(--text-lt); line-height:1.6; }
+
+.pain-quote {
+  background:linear-gradient(135deg,var(--pink-lt) 0%,var(--pink) 100%);
+  border-radius:14px; padding:36px 40px; margin-top:40px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.2rem,2.5vw,1.55rem);
+  color:var(--text); font-style:italic; line-height:1.75; position:relative;
+}
+.pain-quote::before {
+  content:'"'; font-size:100px; color:var(--purple); opacity:.2;
+  position:absolute; top:-10px; left:20px; line-height:1;
+  font-family:'Cormorant Garamond',serif;
+}
+
+/* ══════════════════════════════════
+   BELIEF BREAK
+══════════════════════════════════ */
+.belief {
+  background:linear-gradient(150deg,var(--purple) 0%,var(--purple-dk) 100%);
+  color:#fff; text-align:center;
+}
+.belief h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.75rem,4vw,2.6rem); color:#fff; margin-bottom:28px; line-height:1.2;
+}
+.belief h2 em { color:#ffb347; font-style:italic; }
+.belief p { font-size:16px; opacity:.9; max-width:620px; margin:0 auto 20px; line-height:1.9; }
+.belief p strong { color:#fff; opacity:1; }
+.belief-highlight {
+  display:inline-block;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:10px; padding:18px 28px; margin-top:12px;
+  font-size:15px; font-weight:600; color:#fff; line-height:1.65; max-width:600px;
+}
+
+/* ══════════════════════════════════
+   METHOD
+══════════════════════════════════ */
+.method { background:var(--beige); text-align:center; }
+.method h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.75rem,4vw,2.6rem); color:var(--text); margin-bottom:12px;
+}
+.method-sub { font-size:16px; color:var(--text-lt); max-width:580px; margin:0 auto 48px; }
+
+.book-wrap {
+  display:flex; align-items:center; gap:48px;
+  flex-wrap:wrap; justify-content:center; margin-bottom:56px;
+}
+.book-visual {
+  background:linear-gradient(145deg,#1a1540 0%,#2d2568 100%);
+  border-radius:14px; padding:40px 32px;
+  min-width:240px; max-width:280px;
+  box-shadow:20px 20px 60px rgba(108,92,231,.35);
+  position:relative; border:1px solid rgba(108,92,231,.4); flex-shrink:0;
+}
+.book-visual::after {
+  content:''; position:absolute;
+  top:10px; left:10px; right:-10px; bottom:-10px;
+  background:rgba(108,92,231,.12); border-radius:14px; z-index:-1;
+}
+.book-tag-top { font-size:9px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--orange-lt); margin-bottom:20px; display:block; }
+.book-title { font-family:'Cormorant Garamond',serif; font-size:1.45rem; color:#fff; line-height:1.3; font-style:italic; margin-bottom:16px; }
+.book-line { width:40px; height:1px; background:var(--orange); margin:0 auto 16px; opacity:.6; }
+.book-tag-bot { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.4); }
+
+.method-pills { display:flex; flex-direction:column; gap:14px; max-width:380px; text-align:left; }
+.pill {
+  display:flex; align-items:flex-start; gap:14px;
+  background:var(--white); border-radius:10px; padding:16px 20px;
+  border-left:3px solid var(--purple);
+  box-shadow:0 2px 12px rgba(108,92,231,.08);
+}
+.pill-icon { font-size:22px; flex-shrink:0; margin-top:1px; }
+.pill-text h4 { font-size:14px; font-weight:700; color:var(--text); margin-bottom:4px; }
+.pill-text p { font-size:13px; color:var(--text-lt); line-height:1.55; }
+
+/* ══════════════════════════════════
+   BENEFITS
+══════════════════════════════════ */
+.benefits { background:var(--white); }
+.benefits h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.75rem,4vw,2.4rem); color:var(--text); text-align:center; margin-bottom:40px;
+}
+.benefits-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+.benefit {
+  display:flex; align-items:flex-start; gap:14px;
+  background:var(--beige); border-radius:10px; padding:18px 20px;
+  border:1px solid rgba(108,92,231,.12);
+}
+.benefit-dot {
+  width:22px; height:22px; border-radius:50%;
+  background:var(--purple); color:#fff;
+  font-size:11px; font-weight:800;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; margin-top:2px;
+}
+.benefit p { font-size:14px; color:var(--text); font-weight:500; line-height:1.6; }
+.mid-cta { text-align:center; margin-top:48px; }
+
+/* ══════════════════════════════════
+   PROOF
+══════════════════════════════════ */
+.proof { background:var(--beige); text-align:center; }
+.proof h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,3.5vw,2.2rem); color:var(--text); margin-bottom:32px;
+}
+.proof-box {
+  background:var(--white); border-radius:14px; padding:40px;
+  max-width:640px; margin:0 auto; text-align:left;
+  border-top:4px solid var(--purple);
+  box-shadow:0 4px 28px rgba(108,92,231,.1);
+}
+.proof-box p { font-size:15px; color:var(--text); line-height:1.9; margin-bottom:16px; }
+.proof-box p:last-child { margin-bottom:0; font-weight:700; color:var(--purple-dk); font-size:16px; border-top:1px solid rgba(108,92,231,.12); padding-top:16px; margin-top:4px; }
+
+/* ══════════════════════════════════
+   REALITY CHECK (NEW)
+══════════════════════════════════ */
+.reality {
+  background:linear-gradient(135deg,#1a1540 0%,#2d2568 100%);
+  padding:60px 20px; text-align:center; color:#fff;
+}
+.reality p {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.3rem,3vw,1.75rem);
+  font-style:italic; line-height:1.7;
+  max-width:580px; margin:0 auto 20px; opacity:.92;
+}
+.reality p strong { color:#ffb347; font-style:normal; }
+.reality-warning {
+  font-family:'DM Sans',sans-serif;
+  font-size:15px; font-weight:700;
+  color:rgba(255,255,255,.7);
+  max-width:480px; margin:0 auto;
+  border-top:1px solid rgba(255,255,255,.12); padding-top:20px;
+}
+
+/* ══════════════════════════════════
+   PRICING
+══════════════════════════════════ */
+.pricing { background:var(--text); padding:80px 20px; }
+.pricing h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.75rem,4vw,2.6rem); color:#fff; text-align:center; margin-bottom:12px;
+}
+.pricing-intro {
+  text-align:center; font-size:16px; color:rgba(255,255,255,.7);
+  max-width:580px; margin:0 auto 12px; line-height:1.8;
+}
+.pricing-value {
+  text-align:center; font-size:15px; font-weight:700;
+  color:var(--orange-lt); max-width:540px; margin:0 auto 44px; line-height:1.7;
+  background:rgba(255,122,0,.12); border-radius:8px; padding:14px 20px;
+}
+
+.cards { display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:760px; margin:0 auto 36px; }
+@media(max-width:580px){ .cards{ grid-template-columns:1fr; } }
+
+.card {
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px; padding:36px 28px; text-align:center;
+}
+.card.featured {
+  background:var(--white);
+  border:2px solid var(--orange);
+  box-shadow:0 16px 60px rgba(255,122,0,.22);
+  transform:scale(1.04);
+}
+
+.card-badge {
+  display:inline-block;
+  background:var(--orange); color:#fff;
+  font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
+  padding:5px 18px; border-radius:30px; margin-bottom:20px;
+  box-shadow:0 4px 14px rgba(255,122,0,.4);
+}
+
+.card-name { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:14px; }
+.card:not(.featured) .card-name { color:rgba(255,255,255,.45); }
+.card.featured .card-name { color:var(--purple); }
+
+.card-price { font-family:'Cormorant Garamond',serif; font-size:3.2rem; font-weight:700; line-height:1; margin-bottom:6px; }
+.card:not(.featured) .card-price { color:#fff; }
+.card.featured .card-price { color:var(--orange); }
+.card-price sub { font-size:1.1rem; font-family:'DM Sans',sans-serif; vertical-align:super; }
+
+.card-anchor { font-size:13px; margin-bottom:20px; text-decoration:line-through; }
+.card:not(.featured) .card-anchor { color:rgba(255,255,255,.3); }
+.card.featured .card-anchor { color:#aaa; }
+
+.card-ul { list-style:none; text-align:left; margin-bottom:24px; }
+.card-ul li { font-size:13px; padding:8px 0; display:flex; align-items:flex-start; gap:10px; border-bottom:1px solid rgba(133,139,114,.12); }
+.card-ul li:last-child { border:none; }
+.card:not(.featured) .card-ul li { color:rgba(255,255,255,.65); }
+.card.featured .card-ul li { color:var(--text); }
+.ci { color:var(--orange); font-weight:800; flex-shrink:0; }
+.cx { color:#555; font-weight:800; flex-shrink:0; }
+.card.featured .cx { color:#ccc; }
+
+.card-warn { font-size:12px; line-height:1.75; margin-bottom:22px; }
+.card:not(.featured) .card-warn { color:rgba(255,255,255,.35); font-style:italic; }
+.card.featured .card-warn { color:var(--purple); font-weight:600; }
+
+.pricing-bottom {
+  text-align:center; font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem; font-style:italic; color:rgba(255,255,255,.6); margin-top:28px;
+}
+.pricing-bottom strong { color:var(--orange-lt); font-style:normal; }
+
+/* ══════════════════════════════════
+   BONUSES
+══════════════════════════════════ */
+.bonuses { background:var(--white); text-align:center; }
+.bonuses h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.75rem,4vw,2.4rem); color:var(--text); margin-bottom:8px; }
+.bonuses-sub { font-size:15px; color:var(--purple); margin-bottom:48px; font-style:italic; font-family:'Cormorant Garamond',serif; }
+
+.bonus-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:880px; margin:0 auto; }
+.bonus-card {
+  background:var(--beige); border-radius:14px; padding:32px 24px;
+  border:1px solid rgba(108,92,231,.15); text-align:left; transition:all .3s ease;
+}
+.bonus-card:hover { transform:translateY(-4px); border-color:rgba(108,92,231,.4); box-shadow:0 12px 40px rgba(108,92,231,.1); }
+.bonus-num {
+  width:42px; height:42px; border-radius:50%;
+  background:var(--purple); color:#fff;
+  font-size:16px; font-weight:800;
+  display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+}
+.bonus-lbl { font-size:9px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--orange); margin-bottom:8px; display:block; }
+.bonus-card h3 { font-size:15px; font-weight:700; color:var(--text); margin-bottom:10px; line-height:1.4; }
+.bonus-card p { font-size:13px; color:var(--text-lt); line-height:1.65; }
+
+/* ══════════════════════════════════
+   TRANSFORMATION
+══════════════════════════════════ */
+.transform { background:var(--beige); }
+.transform h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.75rem,4vw,2.4rem); color:var(--text); text-align:center; margin-bottom:40px; }
+.ba-wrap { display:grid; grid-template-columns:1fr 1fr; max-width:720px; margin:0 auto; border-radius:16px; overflow:hidden; box-shadow:0 12px 50px rgba(108,92,231,.14); }
+@media(max-width:540px){ .ba-wrap{ grid-template-columns:1fr; } }
+.ba-before { background:#f0ecea; padding:36px 28px; }
+.ba-after { background:linear-gradient(155deg,var(--purple) 0%,var(--purple-dk) 100%); padding:36px 28px; }
+.ba-lbl { font-size:9px; font-weight:800; letter-spacing:3.5px; text-transform:uppercase; margin-bottom:20px; display:block; }
+.ba-before .ba-lbl { color:#bbb; }
+.ba-after .ba-lbl { color:rgba(255,255,255,.7); }
+.ba-list { list-style:none; }
+.ba-list li { font-size:14px; padding:10px 0; display:flex; align-items:flex-start; gap:10px; border-bottom:1px solid rgba(0,0,0,.06); }
+.ba-list li:last-child { border:none; }
+.ba-before .ba-list li { color:#999; }
+.ba-after .ba-list li { color:rgba(255,255,255,.92); border-color:rgba(255,255,255,.1); }
+
+/* ══════════════════════════════════
+   GUARANTEE
+══════════════════════════════════ */
+.guarantee { background:var(--white); text-align:center; }
+.guarantee-box {
+  background:var(--beige); border:2px solid var(--purple);
+  border-radius:18px; padding:52px 40px; max-width:580px; margin:0 auto;
+}
+.guar-icon { font-size:56px; display:block; margin-bottom:20px; }
+.guarantee-box h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.6rem,3.5vw,2rem); color:var(--text); margin-bottom:18px; }
+.guarantee-box p { font-size:15px; color:var(--text-lt); line-height:1.85; }
+.guarantee-box strong { color:var(--text); }
+
+/* ══════════════════════════════════
+   FAQ
+══════════════════════════════════ */
+.faq-sec { background:var(--beige); }
+.faq-sec h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.75rem,4vw,2.4rem); color:var(--text); text-align:center; margin-bottom:8px; }
+.faq-subtitle { text-align:center; font-size:15px; color:var(--purple); font-style:italic; font-family:'Cormorant Garamond',serif; margin-bottom:44px; display:block; }
+.faq-list { max-width:680px; margin:0 auto; display:flex; flex-direction:column; gap:10px; }
+.faq-item { background:var(--white); border-radius:10px; border:1px solid rgba(108,92,231,.15); overflow:hidden; }
+.faq-q { width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; background:none; border:none; cursor:pointer; text-align:left; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:600; color:var(--text); line-height:1.5; transition:background .2s; }
+.faq-q:hover { background:var(--beige); }
+.faq-icon { width:28px; height:28px; border-radius:50%; background:var(--purple); color:#fff; font-size:18px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform .3s ease; line-height:1; }
+.faq-q.open .faq-icon { transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .4s ease, padding .3s ease; }
+.faq-a.open { max-height:300px; padding:0 24px 20px; }
+.faq-a p { font-size:14px; color:var(--text-lt); line-height:1.8; border-top:1px solid rgba(108,92,231,.1); padding-top:16px; }
+
+/* ── SCARCITY ── */
+.scarcity { background:linear-gradient(135deg,#b03a2e 0%,#8e2a20 100%); padding:20px; text-align:center; color:#fff; }
+.scarcity p { font-size:14px; font-weight:700; line-height:1.6; }
+.scarcity span { color:#ffd6d1; font-weight:400; }
+
+/* ══════════════════════════════════
+   FINAL CTA
+══════════════════════════════════ */
+.final {
+  background:linear-gradient(160deg,#1a1540 0%,#2d2568 60%,#6C5CE7 100%);
+  padding:100px 20px; text-align:center; position:relative; overflow:hidden;
+}
+.final::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,122,0,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.final h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,4.5vw,3rem); color:#fff; margin-bottom:20px; line-height:1.2; }
+.final h2 em { color:#ffb347; font-style:italic; }
+.final-tension { font-size:16px; color:rgba(255,255,255,.8); max-width:540px; margin:0 auto 36px; line-height:1.85; }
+.final-tension strong { color:#fff; }
+.final-decision {
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15);
+  border-radius:12px; padding:24px 32px; max-width:520px; margin:0 auto 40px;
+  font-size:16px; color:rgba(255,255,255,.9); line-height:1.85; font-weight:500;
+}
+.final-decision strong { color:#ffb347; }
+.final .btn-orange { font-size:16px; padding:22px 60px; }
+.final-sub { display:block; margin-top:16px; font-size:12px; color:rgba(255,255,255,.3); letter-spacing:1.5px; }
+.final-urgency { margin-top:18px; font-size:13px; color:rgba(255,255,255,.5); }
+.final-urgency strong { color:var(--orange-lt); }
+.security-row { display:flex; align-items:center; justify-content:center; gap:28px; margin-top:44px; flex-wrap:wrap; }
+.sec-item { display:flex; align-items:center; gap:8px; font-size:12px; color:rgba(255,255,255,.38); font-weight:500; }
+
+/* ── FOOTER ── */
+footer { background:#0e0c1f; padding:28px 20px; text-align:center; font-size:11px; color:rgba(255,255,255,.25); line-height:1.8; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+.hero > * { animation:fadeUp .75s ease both; }
+.hero .hero-badge   { animation-delay:.08s }
+.hero h1            { animation-delay:.22s }
+.hero .hero-hook    { animation-delay:.36s }
+.hero .hero-sub     { animation-delay:.46s }
+.hero .hero-tension { animation-delay:.56s }
+.hero .btn-orange   { animation-delay:.68s }
+.hero .hero-anchor  { animation-delay:.78s }
+.hero .scroll-hint  { animation-delay:.88s }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">⚡ Acesso imediato após a confirmação &nbsp;·&nbsp; 🛡 Garantia de 7 dias sem risco</div>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">✦ Baseado no funcionamento real do seu sistema nervoso ✦</div>
+
+    <h1>
+      Controle sua ansiedade em minutos —<br>
+      <em>mesmo nas crises mais intensas.</em>
+      <strong>O sistema prático que ninguém te ensinou.</strong>
+    </h1>
+
+    <p class="hero-hook">
+      "Se você já sentiu que ia perder o controle… e ninguém sabia o que estava acontecendo dentro de você…"
+    </p>
+
+    <p class="hero-sub">
+      Mais de 20 técnicas organizadas por nível de crise. Aplicáveis no exato momento em que você mais precisa — quando sua mente trava e você sente que vai desmoronar.
+    </p>
+
+    <div class="hero-tension">
+      ⚠ E o pior: quanto mais você tenta se controlar… mais parece que perde o controle.
+    </div>
+
+    <a href="#oferta" class="btn-orange">QUERO PARAR ESSA CRISE AGORA</a>
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:18px;">
+      <span style="font-size:13px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:6px;font-weight:600;">✔ Acesso imediato</span>
+      <span style="font-size:13px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:6px;font-weight:600;">✔ Funciona mesmo em crise intensa</span>
+      <span style="font-size:13px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:6px;font-weight:600;">✔ Sem precisar "se acalmar" antes</span>
+    </div>
+
+    <span class="hero-anchor">↓ continue lendo — isso foi feito para você</span>
+    <div class="scroll-hint">role para baixo <span>↓</span></div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <strong>Já ajudou mulheres que travavam em crises, choravam sem controle e explodiam se arrependendo depois</strong> — e você pode ser a próxima.
+</div>
+
+<!-- ══════════ PAIN ══════════ -->
+<section class="pain sec">
+  <div class="container">
+    <span class="eyebrow">✦ Você conhece essa sensação ✦</span>
+    <h2>Já passou por algum<br><em>desses momentos?</em></h2>
+
+    <div class="symptoms">
+      <div class="symptom">
+        <span class="symptom-icon">🫀</span>
+        <h4>Aperto no peito</h4>
+        <p>Aquela pressão que aparece do nada — e não vai embora mesmo sem motivo claro.</p>
+      </div>
+      <div class="symptom">
+        <span class="symptom-icon">🌀</span>
+        <h4>Mente acelerada</h4>
+        <p>Pensamentos em espiral, um atrás do outro, sem conseguir parar ou organizar.</p>
+      </div>
+      <div class="symptom">
+        <span class="symptom-icon">🌬️</span>
+        <h4>Respiração travada</h4>
+        <p>A sensação de que o ar não entra — e tentar respirar fundo só piora tudo.</p>
+      </div>
+      <div class="symptom">
+        <span class="symptom-icon">💥</span>
+        <h4>Explosão emocional</h4>
+        <p>Você perde o controle, grita, chora, ou trava — e se arrepende depois.</p>
+      </div>
+    </div>
+
+    <div class="pain-quote">
+      Você tentou respirar. Tentou ignorar. Tentou "pensar positivo".<br>
+      Mas na hora da crise, <strong>nada funciona.</strong><br>
+      E você fica com aquela sensação de que alguma coisa está errada com você.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BELIEF BREAK ══════════ -->
+<section class="belief sec">
+  <div class="container">
+    <h2>Não é fraqueza.<br><em>É o seu sistema nervoso.</em></h2>
+    <p>Você não está exagerando. Você não é instável. Você não é "dramática demais".</p>
+    <p>Quando a crise chega, seu cérebro entra em modo de sobrevivência. A parte racional desliga. E nesse estado — <strong>nenhuma técnica superficial vai funcionar.</strong></p>
+    <p>Não porque você falhou. Mas porque você nunca aprendeu o que fazer nesse momento específico. Não é sobre força de vontade. É sobre saber <strong>em qual ordem agir</strong> para que o seu corpo saia do modo pânico.</p>
+    <div class="belief-highlight">
+      🧠 Isso tem base científica: o sistema nervoso autônomo pode ser regulado — mas precisa do método certo para responder.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ METHOD ══════════ -->
+<section class="method sec">
+  <div class="container-md">
+    <span class="eyebrow">✦ A solução ✦</span>
+    <h2>Um sistema — não apenas um ebook.</h2>
+    <p class="method-sub">Técnicas práticas, organizadas por nível de crise, para você aplicar em minutos — mesmo quando a mente trava.</p>
+
+    <div class="book-wrap">
+      <div class="book-visual">
+        <span class="book-tag-top">Sistema Prático</span>
+        <div class="book-title">Técnicas de Controle Emocional em Crises</div>
+        <div class="book-line"></div>
+        <span class="book-tag-bot">Método · Passo a Passo</span>
+      </div>
+      <div class="method-pills">
+        <div class="pill">
+          <div class="pill-icon">📋</div>
+          <div class="pill-text">
+            <h4>+20 técnicas práticas</h4>
+            <p>Para diferentes tipos e intensidades de crise emocional.</p>
+          </div>
+        </div>
+        <div class="pill">
+          <div class="pill-icon">🎯</div>
+          <div class="pill-text">
+            <h4>Dividido por nível de crise</h4>
+            <p>Leve, moderada ou intensa — você sabe exatamente o que fazer em cada uma.</p>
+          </div>
+        </div>
+        <div class="pill">
+          <div class="pill-icon">⚡</div>
+          <div class="pill-text">
+            <h4>Aplicável em minutos</h4>
+            <p>Sem depender de calma prévia, meditação ou ambiente ideal.</p>
+          </div>
+        </div>
+        <div class="pill">
+          <div class="pill-icon">🔄</div>
+          <div class="pill-text">
+            <h4>Atua na causa — não só no sintoma</h4>
+            <p>Reduz a frequência das crises. Não apenas o alívio momentâneo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BENEFITS ══════════ -->
+<section class="benefits sec">
+  <div class="container-md">
+    <h2>O que você vai conseguir fazer</h2>
+    <div class="benefits-grid">
+      <div class="benefit"><div class="benefit-dot">✓</div><p>Parar uma crise emocional em minutos — mesmo sem conseguir pensar direito</p></div>
+      <div class="benefit"><div class="benefit-dot">✓</div><p>Reduzir a ansiedade antes que ela vire crise</p></div>
+      <div class="benefit"><div class="benefit-dot">✓</div><p>Controlar suas reações em discussões sem engolir tudo por dentro</p></div>
+      <div class="benefit"><div class="benefit-dot">✓</div><p>Organizar os pensamentos acelerados e voltar à clareza mental</p></div>
+      <div class="benefit"><div class="benefit-dot">✓</div><p>Parar de se cobrar tanto — e entender por que isso gera mais ansiedade</p></div>
+      <div class="benefit"><div class="benefit-dot">✓</div><p>Ter uma rotina simples que equilibra seu estado emocional no dia a dia</p></div>
+      <div class="benefit"><div class="benefit-dot">✓</div><p>Sentir seu corpo desacelerar antes mesmo de terminar as técnicas</p></div>
+      <div class="benefit"><div class="benefit-dot">✓</div><p>Parar o ciclo de crise → arrependimento → autocobrança → nova crise</p></div>
+    </div>
+    <div class="mid-cta">
+      <a href="#oferta" class="btn-orange">QUERO VOLTAR A TER CONTROLE →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROOF ══════════ -->
+<section class="proof sec">
+  <div class="container">
+    <span class="eyebrow">✦ Por que funciona ✦</span>
+    <h2>A explicação que ninguém te deu sobre suas crises</h2>
+    <div class="proof-box">
+      <p>Durante uma crise, seu cérebro ativa o sistema nervoso simpático — o modo luta ou fuga. Nesse estado, o córtex pré-frontal (responsável por pensar com clareza) é temporariamente desligado.</p>
+      <p>Por isso respirar fundo, contar até dez ou "tentar se acalmar" não funciona. Essas técnicas precisam de um cérebro racional ativo — exatamente o que você não tem durante a crise.</p>
+      <p>O sistema funciona porque atua no corpo primeiro, antes da mente. Cada técnica foi estruturada para sinalizar ao sistema nervoso que o perigo passou — sem precisar "pensar certo" para isso.</p>
+      <p>Na prática: você vai sentir seu corpo desacelerar antes mesmo de terminar as técnicas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ REALITY CHECK ══════════ -->
+<section class="reality">
+  <div class="container">
+    <p>
+      "Se você continuar tentando se controlar do jeito que sempre tentou…<br>
+      <strong>nada vai mudar.</strong>"
+    </p>
+    <p class="reality-warning">
+      A crise vai voltar. O arrependimento também.<br>
+      Você merece uma saída real — não mais do mesmo.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ PRICING ══════════ -->
+<section class="pricing" id="oferta">
+  <div class="container-md">
+    <h2>Escolha o seu nível de transformação</h2>
+    <p class="pricing-intro">
+      Você pode continuar tentando controlar a crise do mesmo jeito que nunca funcionou…<br>
+      ou começar hoje com um método que realmente funciona.
+    </p>
+    <div class="pricing-value">
+      💡 Você pode continuar perdendo dias inteiros por causa de uma crise… ou resolver isso hoje por menos de R$2 por dia.
+    </div>
+
+    <div style="text-align:center;margin-bottom:32px;">
+      <span style="display:inline-block;background:rgba(255,122,0,.15);border:1px solid rgba(255,122,0,.4);color:var(--orange-lt);font-size:13px;font-weight:700;padding:10px 24px;border-radius:30px;letter-spacing:.5px;">
+        ⚠ Esse valor não deve ficar disponível por muito tempo
+      </span>
+    </div>
+
+    <div class="cards">
+      <!-- BASIC -->
+      <div class="card">
+        <div class="card-name">Opção Básica</div>
+        <div class="card-price"><sub>R$</sub>27</div>
+        <p class="card-anchor">Valor original: R$97</p>
+        <ul class="card-ul">
+          <li><span class="ci">✓</span> Ebook completo com +20 técnicas</li>
+          <li><span class="cx">✗</span> Bônus 1 — Fim da autocobrança</li>
+          <li><span class="cx">✗</span> Bônus 2 — Rotina de 15 minutos</li>
+          <li><span class="cx">✗</span> Bônus 3 — Controle em discussões</li>
+        </ul>
+        <p class="card-warn">
+          ⚠ Você continua lidando com crises sozinha<br>
+          ⚠ Sem atuar na causa da ansiedade<br>
+          ⚠ Repetindo o mesmo ciclo emocional
+        </p>
+        <a href="https://chk.eduzz.com/89AXJ4KE0D" target="_blank" rel="noopener" class="btn-ghost">Quero só o básico</a>
+      </div>
+
+      <!-- FEATURED -->
+      <div class="card featured">
+        <div class="card-badge">★ MAIS ESCOLHIDO</div>
+        <div class="card-name">Sistema Completo</div>
+        <div class="card-price"><sub>R$</sub>47</div>
+        <p class="card-anchor">Valor original: R$197</p>
+        <ul class="card-ul">
+          <li><span class="ci">✓</span> Ebook completo com +20 técnicas</li>
+          <li><span class="ci">✓</span> Bônus 1 — Fim da autocobrança</li>
+          <li><span class="ci">✓</span> Bônus 2 — Rotina de 15 minutos</li>
+          <li><span class="ci">✓</span> Bônus 3 — Controle em discussões</li>
+        </ul>
+        <p class="card-warn">
+          🔥 Escolha de quem quer parar de viver em crise<br>
+          ✦ Atua na causa — não só no sintoma<br>
+          ✦ Reduz crises no dia a dia
+        </p>
+        <a href="https://chk.eduzz.com/G92KZ6EKWE" target="_blank" rel="noopener" class="btn-orange-blk">QUERO PARAR ESSA CRISE AGORA →</a>
+      </div>
+    </div>
+
+    <p class="pricing-bottom">
+      Por menos que o valor de um lanche, você para de só aliviar a crise —<br>
+      <strong>e começa a resolver o que a causa.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ BONUSES ══════════ -->
+<section class="bonuses sec">
+  <div class="container-md">
+    <span class="eyebrow">✦ Exclusivo no plano de R$47 ✦</span>
+    <h2>Os 3 bônus que completam a transformação</h2>
+    <p class="bonuses-sub">"Porque parar a crise não é suficiente — você precisa parar o que a causa."</p>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-num">1</div>
+        <span class="bonus-lbl">Bônus</span>
+        <h3>Como Parar a Autocobrança que Gera Ansiedade</h3>
+        <p>Entenda por que você se cobra tanto e aprenda o método para interromper esse ciclo silencioso que alimenta sua ansiedade todos os dias.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-num">2</div>
+        <span class="bonus-lbl">Bônus</span>
+        <h3>Rotina de 15 Minutos para Equilíbrio Emocional</h3>
+        <p>Uma sequência simples para regular seu sistema nervoso antes que o dia te sobrecarregue. 15 minutos que mudam como você reage ao longo do dia.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-num">3</div>
+        <span class="bonus-lbl">Bônus</span>
+        <h3>Como Não Explodir em Discussões</h3>
+        <p>Técnicas práticas para manter o controle emocional em conflitos — sem engolir tudo e nem perder a cabeça. Pare de se arrepender depois.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TRANSFORMATION ══════════ -->
+<section class="transform sec">
+  <div class="container">
+    <h2>Antes × Depois do Sistema</h2>
+    <div class="ba-wrap">
+      <div class="ba-before">
+        <span class="ba-lbl">Antes</span>
+        <ul class="ba-list">
+          <li><span>✗</span> Paralisa durante a crise</li>
+          <li><span>✗</span> Não sabe o que fazer</li>
+          <li><span>✗</span> Explode e se arrepende depois</li>
+          <li><span>✗</span> Se cobra por ter reagido mal</li>
+          <li><span>✗</span> Vive no modo sobrevivência</li>
+          <li><span>✗</span> Repetindo o mesmo ciclo</li>
+        </ul>
+      </div>
+      <div class="ba-after">
+        <span class="ba-lbl">Depois</span>
+        <ul class="ba-list">
+          <li><span>✓</span> Tem um caminho claro na crise</li>
+          <li><span>✓</span> Age com presença e controle</li>
+          <li><span>✓</span> Reage sem explodir ou travar</li>
+          <li><span>✓</span> Para de se cobrar depois</li>
+          <li><span>✓</span> Vive com mais leveza e clareza</li>
+          <li><span>✓</span> Quebra o ciclo de uma vez</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GUARANTEE ══════════ -->
+<section class="guarantee sec">
+  <div class="container">
+    <div class="guarantee-box">
+      <span class="guar-icon">🛡️</span>
+      <h2>Garantia Total de 7 Dias</h2>
+      <p>Aplique o método. Se em até <strong>7 dias</strong> você não sentir nenhuma diferença, basta me enviar uma mensagem e devolverei <strong>100% do seu dinheiro</strong>. Sem perguntas. Sem burocracia. O risco é completamente meu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="faq-sec sec">
+  <div class="container">
+    <span class="eyebrow">✦ Antes de decidir ✦</span>
+    <h2>Dúvidas Frequentes</h2>
+    <span class="faq-subtitle">Tudo que você precisa saber antes de começar.</span>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Por onde eu devo começar?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Se você quer aprender o básico para lidar com crises, o ebook de R$27 já ajuda. Mas se você quer reduzir a ansiedade no dia a dia e parar o que causa as crises, a opção completa de R$47 é a mais indicada — e a mais escolhida.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>As técnicas funcionam mesmo se eu estiver em crise intensa?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Sim. O sistema foi criado justamente para momentos em que a mente trava. As técnicas são simples, diretas e organizadas por nível de crise — para você saber exatamente o que fazer mesmo sem conseguir pensar com clareza.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Vou receber o acesso na hora?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Sim. Após a confirmação do pagamento, você recebe o acesso imediatamente.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Esse ebook substitui terapia?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Não. Este material é uma ferramenta prática de apoio emocional, mas não substitui acompanhamento psicológico ou médico. Se suas crises forem frequentes, intensas ou envolverem risco à sua segurança, procure ajuda profissional.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Qual opção vale mais a pena?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>A opção completa de R$47. Além do sistema principal, você recebe 3 bônus que trabalham autocobrança, equilíbrio emocional diário e controle em discussões. É o pacote que atua na crise e na causa da crise.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Como vou receber os bônus?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Os bônus são digitais e entregues junto com o acesso ao produto completo de R$47, imediatamente após a confirmação do pagamento.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Tem garantia?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Sim. Você tem 7 dias de garantia total. Se não sentir diferença, devolvemos 100% do valor sem perguntas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Esse conteúdo é indicado para quem tem ansiedade?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Sim — especialmente para quem sente ansiedade, sobrecarga emocional, pensamentos acelerados, choro intenso ou dificuldade de se acalmar. Ainda assim, não substitui tratamento profissional.</p></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:44px;font-weight:700;font-size:17px;color:var(--text);">
+      Se você chegou até aqui, já sabe que precisa de algo diferente.
+    </p>
+    <div style="text-align:center;margin-top:20px;">
+      <a href="#oferta" class="btn-orange" style="display:inline-block;">QUERO RESOLVER ISSO AGORA</a>
+    </div>
+  </div>
+</section>
+
+<!-- SCARCITY -->
+<div class="scarcity">
+  <p>⚠ <strong>Atenção:</strong> esse valor promocional pode sair do ar a qualquer momento. <span>Após a compra, seu acesso é imediato e permanente.</span></p>
+</div>
+
+<!-- ══════════ FINAL CTA ══════════ -->
+<section class="final">
+  <div class="container">
+    <h2>
+      Você merece se sentir<br>
+      <em>em controle da sua própria vida.</em>
+    </h2>
+
+    <p class="final-tension">
+      Não quando tudo estiver perfeito.<br>
+      <strong>Agora. Com o que você tem. Com quem você é.</strong>
+    </p>
+
+    <div class="final-decision">
+      Ou você continua vivendo isso em silêncio…<br>
+      ou resolve hoje.<br><br>
+      <strong>Porque a verdade é: isso não vai melhorar sozinho.</strong>
+    </div>
+
+    <a href="https://chk.eduzz.com/G92KZ6EKWE" target="_blank" rel="noopener" class="btn-orange">QUERO SAIR DESSE CICLO AGORA</a>
+    <span class="final-sub">✦ Ebook + 3 bônus · R$47 · Acesso imediato ✦</span>
+    <p class="final-urgency">⚠ Essa condição <strong>pode sair do ar a qualquer momento.</strong></p>
+
+    <div class="security-row">
+      <div class="sec-item">🔒 Pagamento 100% seguro</div>
+      <div class="sec-item">📱 Acesso imediato</div>
+      <div class="sec-item">🛡️ Garantia de 7 dias</div>
+      <div class="sec-item">💳 Parcele no cartão</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024 · Técnicas de Controle Emocional em Crises · Todos os direitos reservados.</p>
+  <p style="margin-top:6px">Este produto é vendido com garantia de satisfação de 7 dias. Ao realizar a compra, você concorda com os Termos de Uso e Política de Privacidade. Este material é uma ferramenta prática de apoio emocional e não substitui acompanhamento psicológico ou médico.</p>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const answer = btn.parentElement.querySelector('.faq-a');
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(b => {
+    b.classList.remove('open');
+    b.parentElement.querySelector('.faq-a').classList.remove('open');
+  });
+  if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+}
+</script>
+</body>
+</html>
