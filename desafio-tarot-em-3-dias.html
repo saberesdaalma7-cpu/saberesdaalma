@@ -328,7 +328,7 @@ footer img{width:110px}
         </ul>
         <div class="price"><small>R$</small>17</div>
         <p class="note">pagamento único</p>
-        <a class="btn ghost" id="buy-ebook" href="https://chk.eduzz.com/qc7lysjq">Quero só o e-book</a>
+        <a class="btn ghost" id="buy-ebook" href="https://sun.eduzz.com/qc7lysjq">Quero só o e-book</a>
       </div>
       <div class="plan best">
         <span class="badge">Mais escolhido</span>
@@ -343,7 +343,7 @@ footer img{width:110px}
         <div class="save">Por só R$ 10 a mais, você leva os três presentes</div>
         <div class="price"><small>R$</small>27</div>
         <p class="note">pagamento único</p>
-        <a class="btn big" id="buy-kit" href="https://chk.eduzz.com/rdvgskg4">Quero o kit completo</a>
+        <a class="btn big" id="buy-kit" href="https://sun.eduzz.com/rdvgskg4">Quero o kit completo</a>
       </div>
     </div>
     <div class="guarantee">
@@ -388,8 +388,8 @@ footer img{width:110px}
 <script>
 {
   // Troque pelos links de checkout da Eduzz:
-  const LINK_EBOOK = "https://chk.eduzz.com/qc7lysjq";
-  const LINK_KIT = "https://chk.eduzz.com/rdvgskg4";
+  const LINK_EBOOK = "https://sun.eduzz.com/qc7lysjq";
+  const LINK_KIT = "https://sun.eduzz.com/rdvgskg4";
   const e = document.getElementById("buy-ebook"), k = document.getElementById("buy-kit");
   if (!LINK_EBOOK.startsWith("http")) e.href = "#oferta"; else e.href = LINK_EBOOK;
   if (!LINK_KIT.startsWith("http")) k.href = "#oferta"; else k.href = LINK_KIT;
@@ -402,7 +402,7 @@ footer img{width:110px}
 }
 </script>
 <script>
-  document.querySelectorAll('a[href*="chk.eduzz.com"]').forEach(function(a){
+  document.querySelectorAll('a[href*="eduzz.com/"]').forEach(function(a){
     a.addEventListener('click', function(){
       var kit = a.href.indexOf('rdvgskg4')>-1;
       try { if (window.fbq) fbq('track','InitiateCheckout',{content_name:kit?'Kit Desafio Completo':'Desafio Tarot em 3 Dias',value:kit?27.00:17.00,currency:'BRL'}); } catch(e){}
@@ -414,7 +414,7 @@ footer img{width:110px}
   var q=new URLSearchParams(location.search),keep=new URLSearchParams();
   q.forEach(function(v,k){if(/^(utm_|fbclid$|src$|sck$)/.test(k))keep.set(k,v)});
   if(![...keep].length)return;
-  document.querySelectorAll('a[href*="chk.eduzz.com"]').forEach(function(a){
+  document.querySelectorAll('a[href*="eduzz.com/"]').forEach(function(a){
     var u=new URL(a.href);keep.forEach(function(v,k){u.searchParams.set(k,v)});a.href=u.toString();
   });
 })();
